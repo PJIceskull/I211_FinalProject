@@ -1,8 +1,8 @@
 <?php
 
 /*
- * Layla Mitiche
- * December 8, 2022
+* Author: Pierce Issah
+ * Date: 03-05-2023
  * user_controller.class.php
  * allow the user to perform account-related actions on the site
  */

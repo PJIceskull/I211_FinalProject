@@ -1,8 +1,8 @@
 <?php
 
 /*
- * Author: Layla Mitiche
- * Date: 11/15/22
+ * Author: Pierce Issah
+ * Date: 03-05-2023
  * File: photogallery_controller.class.php
  * Description: the photo controller
  *

@@ -1,8 +1,8 @@
 <?php
 
 /*
- * Author: Layla Mitiche
- * Date: 11-10-22
+ * Author: Jay Dawson II
+ * Date: 03-05-2023
  * File: photogallery_model.class.php
  * Description: the photogallery model
  *

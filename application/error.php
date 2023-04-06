@@ -1,7 +1,7 @@
 <?php
 /**
- * Author: Deep Patel
- * Date: November 17, 2022
+ * Author: Abdul Sankoh
+ * Date: 03-05-2023
  * Name: error.php
  * Description: this script displays an error message. This script is globally available throughout the application. 
  *     The message to be displayed is passed to this script via variable $message. The dispatcher uses this to 

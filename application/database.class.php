@@ -1,8 +1,8 @@
 <?php
 
 /*
- * Author: Jay Dawson II
- * Date: November 17, 2022
+* Author: Abdul Sankoh
+ * Date: 03-05-2023
  * File: database,class.php
  * Description: the Database class sets the database details.
  *

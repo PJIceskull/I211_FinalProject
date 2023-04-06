@@ -1,8 +1,8 @@
 <?php
 
 /*
- * Author: Ashleigh Nunnally
- * Date: 11/15/2022
+ * Author: Jay Dawson II
+ * Date: 03-05-2023
  * Name: photogallery.class.php
  * Description:
  */

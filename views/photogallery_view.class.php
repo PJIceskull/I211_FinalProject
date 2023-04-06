@@ -1,7 +1,7 @@
 <?php
 /*
- * Author: Ashhleigh Nunnally
- * Date: 11/15/2022
+ * Author: Abdul Sankoh
+ * Date: 03-05-2023
  * File: photogallery_view.class.php
  * Description: This class defines a method called "display", which displays all movies.
  */

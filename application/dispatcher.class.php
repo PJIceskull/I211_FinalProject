@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Author: Jay Dawson II
- * Date: Novemeber 17, 2022
+ * Author: Abdul Sankoh
+ * Date: 03-05-2023
  * Name: dispatcher.class.php
  * Description:
  */

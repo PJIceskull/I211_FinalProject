@@ -1,7 +1,7 @@
 <?php
 /*
- * Author: Layla Mitiche
- * Date: November 15, 2022
+* Author: Pierce Issah
+ * Date: 03-05-2023
  * File: welcome_controller.class.php
  * Description: This scripts define the class for the welcome controller; this is the default controller.
  *

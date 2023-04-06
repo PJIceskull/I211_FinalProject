@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Layla Mitiche
+ * Jay Dawson II
  * 12/8/22
  * user_model.class.php
  * PHP and SQL interactivity so that various user functions actually work
