@@ -1,10 +1,5 @@
 <?php
-/*
- * Name: Jay Dawson II
- * Date: 11/17/22
- * File:photoindex.class.php
- * Description: the parent class for all view classes. The two functions display page header and footer.
- */
+
 
 class PhotoIndex {
 //this method displays the page header
@@ -28,13 +23,11 @@ class PhotoIndex {
         <div id="top"></div>
         <div id='wrapper'>
         <div id="banner">
-            <a href="<?= BASE_URL ?>../../../index.php" style="text-decoration: none" title="">
                 <div id="left">
-                    <img src='<?= IMG_URL ?>/www/img/logo.png' style="width: 180px; border: none" />
-                    <h5> Photo Gallery <h5/>
-                    <div style='color: #000; font-size: 14pt; font-weight: bold'>Welcome to our Photo Gallery</div>
+                    <h5> Aquatic Photo Gallery <h5/>
+                    <div style='color: #000; font-size: 14pt; font-weight: bold'>Take a look at what we have!</div>
                 </div>
-            </a>
+
            <!-- <div id="right">
                 <img src="<?/*= BASE_URL */?>/www/img/ " style="width: 400px; border: none" />
             </div>-->

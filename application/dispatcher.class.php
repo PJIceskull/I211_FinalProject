@@ -23,7 +23,7 @@ class Dispatcher {
 
         //remove the root folder name from the array if there is
         //array_shift($url_array);
-        while (array_search(basename(getcwd()), $url_array) !== FALSE) {
+        while (in_array(basename(getcwd()), $url_array)) {
             array_shift($url_array);
         }
 
@@ -41,6 +41,7 @@ class Dispatcher {
             include 'error.php';
             exit();
         }
+
         $controller = new $controllerName();
         
         //get method name or assign the default method "index"

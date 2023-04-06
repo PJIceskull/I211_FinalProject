@@ -12,6 +12,7 @@ class PhotoModel
 {
     private $db; //database object
     private $dbConnection; //database connection object
+    static private $_instance = NULL;
     private $tblPhotos;
     private $tblCategories;
 

@@ -137,10 +137,6 @@ span.rcd-numbers {
     text-align: center;
 }
 
-.item:hover {
-    border: 3px solid #044a6e;
-    border-radius: 10px;
-}
 
 .item > p {
     background-color: #b8c6dc;

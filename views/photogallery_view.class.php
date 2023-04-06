@@ -34,17 +34,16 @@ class PhotoView extends PhotoIndex {
             } else {
                 //display photos
                 foreach ($photos as $photo) {
-                    $id = $photo->getId();
+                    $id = $photo->getPhotoId();
                     $name = $photo->getName();
-                    $desc = $photo->getDescription();
-                    $author = $photo->getAuthor();
+                    $image = $photo->getImageURL();
                     $price = $photo->getPrice();
-                    $image = $photo->getImage();
+                    $description = $photo->getDescription();
                     if (strpos($image, "http://") === false and strpos($image, "https://") === false) {
-                        $image = IMG_URL . PHOTO_IMG . $image;
+                        $image = BASE_URL . "/". PHOTO_IMG . $image;
                     }
-                    echo "<div class='item'><p><a href='", IMG_URL, "/photo/detail/$id'><img src='" . $image .
-                        "'></a><span>$name<br>Description: $desc<br>" . "<br>Author: $author</br>". "<br>Price: $price</br>". "</span></p></div>";
+                    echo "<div class='item'><p><a href='", BASE_URL, "/photo/detail/$id'><img src='" . $image .
+                        "'></a><span>$name<br>Description: $description<br>" . "<br>Price: $price</br>". "</span></p></div>";
 
                 }
             }

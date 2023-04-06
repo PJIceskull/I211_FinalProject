@@ -91,22 +91,23 @@ hr {
 #banner {
     text-align: right;
     background-color: #b8c6dc;
-    height: 300px;
+    width: 100%;
+    border-radius: 0 0 20% 20%;
+    height: 200px;
     color: #e1d9d9;
 }
 
 
 #banner #left{
-    float: contour;
     overflow: hidden;
-    width: 530px;
-    text-align: left;
+    width: 500px;
+    text-align: center;
     margin-top: 30px;
     padding-left: 100px;
 }
 
 #banner #right{
-    float: right;
+
     overflow: hidden;
     text-align: right;
 }
@@ -150,10 +151,7 @@ span.rcd-numbers {
     text-align: center;
 }
 
-.item:hover {
-    border: 3px solid #044a6e;
-    border-radius: 10px;
-}
+
 
 .item > p {
     background-color: #b8c6dc;

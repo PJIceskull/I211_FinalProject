@@ -10,45 +10,38 @@
 class Photo
 {
 //properties of a Photo object
-    private $id, $product_name, $description, $author,  $price, $img;
+    private $photo_id, $name, $imageURL, $price, $description;
 
 //constructor that initializes photo properties
-    public function __construct( $id, $product_name, $desc, $author, $price, $img) {
-        $this->id = $id;
-        $this->product_name = $product_name;
-        $this->description = $desc;
-        $this->author = $author;
+    public function __construct( $photo_id, $name,$imageURL, $price,$description) {
+        $this->photo_id = $photo_id;
+        $this->name = $name;
+        $this->imageURL = $imageURL;
         $this->price = $price;
-        $this->img = $img;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
+        $this->description = $description;
     }
 
     /**
      * @return mixed
      */
-    public function getId()
+    public function getPhotoId()
     {
-        return $this->id;
+        return $this->photo_id;
     }
 
+    public function setPhotoId($photo_id){
+        $this->photo_id = $photo_id;
+    }
 
-
-    /*
+    /**
      * @return mixed
      */
     public function getName()
     {
-        return $this->product_name;
+        return $this->name;
     }
 
-    /*
+    /**
      * @return mixed
      */
     public function getDescription()
@@ -56,15 +49,7 @@ class Photo
         return $this->description;
     }
 
-    /*
-     * @return mixed
-     */
-    public function getAuthor()
-    {
-        return $this->author;
-    }
-
-    /*
+    /**
      * @return mixed
      */
     public function getPrice()
@@ -72,9 +57,13 @@ class Photo
         return $this->price;
     }
 
-    public function getImage()
+    /**
+     * @return mixed
+     */
+    public function getImageURL()
     {
-        return $this->img;
+        return $this->imageURL;
     }
+
 
 }
