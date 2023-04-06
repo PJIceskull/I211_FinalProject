@@ -28,7 +28,7 @@ class PhotoIndex {
         <div id="top"></div>
         <div id='wrapper'>
         <div id="banner">
-            <a href="<?= BASE_URL ?>../../../index.php" style="text-decoration: none" title="">
+            <a href="<?= BASE_URL ?>" style="text-decoration: none" title="">
                 <div id="left">
                     <img src='<?= IMG_URL ?>/www/img/logo.png' style="width: 180px; border: none" />
                     <h5> Photo Gallery <h5/>
