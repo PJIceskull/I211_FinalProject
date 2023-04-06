@@ -21,6 +21,9 @@ class ComposerStaticInit08d430758f7c032e073dc3e46879e31f
         'PhotoModel' => __DIR__ . '/../..' . '/models/photogallery_model.class.php',
         'PhotoSearch' => __DIR__ . '/../..' . '/views/photo/search/photo_search.class.php',
         'PhotoView' => __DIR__ . '/../..' . '/views/photogallery_view.class.php',
+        'UserController' => __DIR__ . '/../..' . '/controllers/user_controller.class.php',
+        'UserError' => __DIR__ . '/../..' . '/views/user/error/error.class.php',
+        'UserModel' => __DIR__ . '/../..' . '/models/user_model.class.php',
         'WelcomeController' => __DIR__ . '/../..' . '/controllers/welcome_controller.class.php',
     );
 

@@ -20,5 +20,8 @@ return array(
     'PhotoModel' => $baseDir . '/models/photogallery_model.class.php',
     'PhotoSearch' => $baseDir . '/views/photo/search/photo_search.class.php',
     'PhotoView' => $baseDir . '/views/photogallery_view.class.php',
+    'UserController' => $baseDir . '/controllers/user_controller.class.php',
+    'UserError' => $baseDir . '/views/user/error/error.class.php',
+    'UserModel' => $baseDir . '/models/user_model.class.php',
     'WelcomeController' => $baseDir . '/controllers/welcome_controller.class.php',
 );

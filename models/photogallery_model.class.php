@@ -12,14 +12,14 @@ class PhotoModel
 {
     private $db; //database object
     private $dbConnection; //database connection object
-    private $tblProducts;
-    private $tblOrder_details;
+    private $tblPhotos;
+    private $tblCategories;
 
     public function __construct() {
         $this->db = Database::getDatabase();
         $this->dbConnection = $this->db->getConnection();
-        $this->tblProducts = $this->db->getProducts();
-        $this->tblOrder_details = $this->db->getOrderDetails();
+        $this->tblPhotos = $this->db->getPhotos();
+        $this->tblCategories = $this->db->getCategories();
     }
 
     /*
@@ -28,7 +28,7 @@ class PhotoModel
     */
     public function getPhotos() {
         //SQL select statement
-        $sql = "SELECT * FROM " . $this->db->getProducts();
+        $sql = "SELECT * FROM " . $this->db->getPhotos();
 
         //execute the query
         $query = $this->dbConnection->query($sql);
@@ -39,14 +39,12 @@ class PhotoModel
 
             //loop through all rows
             while ($query_row = $query->fetch_assoc()) {
-                $photosNew = new Photo($query_row["product_id"],
-                    $query_row["product_name"],
+                $photosNew = new Photo($query_row["photo_id"],
+                    $query_row["Name"],
+                    $query_row["imageURL"],
+                    $query_row["Price"],
                     $query_row["description"],
-                    $query_row["author"],
-                    $query_row["price"],
-                    $query_row["img"]);
-
-
+                    $query_row["category_id"]);
 
                 //push the photos into the array
                 $photos[] = $photosNew;

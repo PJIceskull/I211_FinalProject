@@ -55,25 +55,5 @@ class Database {
         return $this->param['tblCategories'];
     }
 
-    //returns the name of the table that stores Customers
-    public function getCustomers() {
-        return $this->param['tblCustomers'];
-    }
-
-    //returns the name of the table that stores orders
-    public function getOrders() {
-        return $this->param['tblOrders'];
-    }
-
-    //returns the name of the table storing order details
-    public function getOrderDetails() {
-        return $this->param['tblOrder_details'];
-    }
-
-    //returns the name of the table storing products
-    public function getProducts() {
-        return $this->param['tblProducts'];
-    }
-
 
 }
