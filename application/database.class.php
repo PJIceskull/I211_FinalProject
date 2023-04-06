@@ -15,11 +15,9 @@ class Database {
         'host' => 'localhost',
         'login' => 'phpuser',
         'password' => 'phpuser',
-        'database' => 'photogallery_db',
-        'tblCustomers' => 'Customers',
-        'tblOrders' => 'Orders',
-        'tblOrderDetails' => 'Order_details',
-        'tblProducts' => 'Products',
+        'database' => 'photo_gallery_final',
+        'tblPhotos' => 'photos',
+        'tblCategories' => 'categories',
     );
     //define the database connection object
     private $objDBConnection = NULL;
@@ -47,6 +45,14 @@ class Database {
     //this function returns the database connection object
     public function getConnection() {
         return $this->objDBConnection;
+    }
+
+    public function getPhotos(){
+        return $this->param['tblPhotos'];
+    }
+
+    public function getCategories(){
+        return $this->param['tblCategories'];
     }
 
     //returns the name of the table that stores Customers
