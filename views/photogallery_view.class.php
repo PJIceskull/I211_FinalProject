@@ -11,20 +11,7 @@ class PhotoView extends PhotoIndex {
     parent::displayHeader("Photogallery");
         ?>
 
-<!--        <!DOCTYPE HTML>-->
-<!--        <html>-->
-<!--        <head>-->
-<!--            <title>Photos Available</title>-->
-<!--            <link type='text/css' rel='stylesheet' href='--><?//= BASE_URL ?><!--/www/css/app_style.css' />-->
-<!--        </head>-->
-        <!--create the search bar -->
-<!--        <div id="searchbar">-->
-<!--            <form method="get" action="--><?//= BASE_URL ?><!--/photo/search">-->
-<!--                <input type="text" name="query-terms" id="searchtextbox" placeholder="Search photos by title" autocomplete="off" onkeyup="handleKeyUp(event)">-->
-<!--                <input type="submit" value="Go" />-->
-<!--            </form>-->
-<!--            <div id="suggestionDiv"></div>-->
-<!--        </div>-->
+
         <h2>Photos Available In Our Gallery: </h2>
 
             <?php
@@ -36,15 +23,16 @@ class PhotoView extends PhotoIndex {
                 foreach ($photos as $photo) {
                     $id = $photo->getId();
                     $name = $photo->getName();
-                    $desc = $photo->getDescription();
-                    $author = $photo->getAuthor();
+                    $imageURL = $photo->getImageURL();
                     $price = $photo->getPrice();
-                    $image = $photo->getImage();
+                    $description = $photo->getDescription();
+
+                    $image = $photo->getImageURL();
                     if (strpos($image, "http://") === false and strpos($image, "https://") === false) {
                         $image = IMG_URL . PHOTO_IMG . $image;
                     }
                     echo "<div class='item'><p><a href='", IMG_URL, "/photo/detail/$id'><img src='" . $image .
-                        "'></a><span>$name<br>Description: $desc<br>" . "<br>Author: $author</br>". "<br>Price: $price</br>". "</span></p></div>";
+                        "'></a><span>$name<br>Description: $description<br>" . "<br>URL: $imageURL</br>". "<br>Price: $price</br>". "</span></p></div>";
 
                 }
             }
@@ -52,9 +40,8 @@ class PhotoView extends PhotoIndex {
 
             ?>
 
-        </body>
-        </html>
-
         <?php
+        //display page footer
+        parent::displayFooter();
     } //end of display method
 } // end of Photo View class

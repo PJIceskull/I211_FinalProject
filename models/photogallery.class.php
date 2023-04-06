@@ -10,15 +10,15 @@
 class Photo
 {
 //properties of a Photo object
-    private $id, $product_name, $description, $author,  $price, $img;
+    private $id, $name, $imageURL, $description,  $price, $img;
 
 //constructor that initializes photo properties
-    public function __construct( $id, $product_name, $desc, $author, $price, $img) {
+    public function __construct( $id, $name, $imageURL, $price, $description, $img) {
         $this->id = $id;
-        $this->product_name = $product_name;
-        $this->description = $desc;
-        $this->author = $author;
+        $this->name = $name;
+        $this->imageURL = $imageURL;
         $this->price = $price;
+        $this->description = $description;
         $this->img = $img;
     }
 
@@ -45,7 +45,15 @@ class Photo
      */
     public function getName()
     {
-        return $this->product_name;
+        return $this->name;
+    }
+
+    /*
+     * @return mixed
+     */
+    public function getImageURL()
+    {
+        return $this->imageURL;
     }
 
     /*
@@ -54,14 +62,6 @@ class Photo
     public function getDescription()
     {
         return $this->description;
-    }
-
-    /*
-     * @return mixed
-     */
-    public function getAuthor()
-    {
-        return $this->author;
     }
 
     /*

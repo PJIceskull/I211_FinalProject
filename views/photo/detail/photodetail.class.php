@@ -17,10 +17,10 @@ class PhotoDetail extends PhotoIndex {
         //retrieve photo details by calling get methods
         $id = $photo->getId();
         $name = $photo->getName();
-        $desc = $photo->getDescription();
-        $author = $photo->getAuthor();
+        $description = $photo->getDescription();
+        $imageURL = $photo->getImageURL();
         $price = $photo->getPrice();
-        $image = $photo->getImage();
+        $image = $photo->getImageURL();
         if (strpos($image, "http://") === false and strpos($image, "https://") === false) {
             $image = BASE_URL . "/" . PHOTO_IMG . $image;
         }
@@ -46,8 +46,8 @@ class PhotoDetail extends PhotoIndex {
                 </td>
                 <td>
                     <p><?= $name ?></p>
-                    <p><?= $desc ?></p>
-                    <p><?= $author ?></p>
+                    <p><?= $description ?></p>
+                    <p><?= $imageURL ?></p>
                     <p><?= $price ?></p>
                     <div id="confirm-message"><?= $confirm ?></div>
                 </td>

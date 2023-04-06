@@ -36,15 +36,15 @@ class PhotoSearch extends PhotoIndex {
                     $id = $photo->getId();
                     $name = $photo->getName();
                     $description = $photo->getDescription();
-                    $author = $photo->getAuthor();
+                    $imageURL = $photo->getImageURL();
                     $price = $photo->getPrice();
-                    $image = $photo->getImage();
+                    $image = $photo->getImageURL();
 
                     if (strpos($image, "http://") === false and strpos($image, "https://") === false) {
                         $image = IMG_URL . PHOTO_IMG . $image;
                     }
 
-                    echo "<div class='item'><p><a href='" . BASE_URL . "/photo/detail/$id'><img src='$image'></a><span>$name<br>Description: $description<br>" . " Author: $author<br>". " Price: $price<br>"."</span></p></div>";
+                    echo "<div class='item'><p><a href='" . BASE_URL . "/photo/detail/$id'><img src='$image'></a><span>$name<br>Description: $description<br>" . " URL: $imageURL<br>". " Price: $price<br>"."</span></p></div>";
 
                 }
             }
