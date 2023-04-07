@@ -38,7 +38,7 @@ h5{
     padding-left: 250px;
     text-align: center;
     font-size: 250%;
-    color: #5c605c;
+    color: #ffffff;
 }
 
 hr {
@@ -89,12 +89,15 @@ hr {
 
 /*style for the banner */
 #banner {
-    text-align: right;
-    background-color: #b8c6dc;
+    background-image: url("../../www/img/Aquatic-Hero.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     width: 100%;
+    height: 500px;
     border-radius: 0 0 20% 20%;
-    height: 200px;
     color: #e1d9d9;
+    margin-bottom: 50px;
 }
 
 
@@ -154,14 +157,14 @@ span.rcd-numbers {
 
 
 .item > p {
-    background-color: #b8c6dc;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 20px;
     border-radius: 15px;
     margin: 0;
     text-align: center;
     color: #5c605c;
     width: 125px;
-    height: 350px;
+    height: 280px;
 }
 
 .item > p img {
@@ -183,43 +186,6 @@ span.rcd-numbers {
     color: #5c605c;
 }
 
-table#detail {
-    width: 100%;
-    border-collapse: collapse;
-    border-bottom: solid 1px #bbb;
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
-
-#detail img {
-    width: 220px;
-}
-
-#detail td {
-    position: relative;
-    vertical-align: top;
-    padding: 2px 12px 15px 0px;
-}
-
-#detail p {
-    padding: 3px;
-}
-
-#detail #button-group {
-    position: absolute;
-    bottom: 20px;
-}
-
-#detail #confirm-message {
-    position: absolute;
-    bottom: 20px;
-    color: #5c605c;
-}
-
-#detail .media-description {
-    max-height: 120px;
-    overflow: auto;
-}
 
 /* style for the search bar */
 #searchbar {
@@ -236,166 +202,3 @@ table#detail {
     border: none;
 }
 
-#searchbar input[type="text"] {
-    width: 155px;
-    padding-left: 8px;
-    font-size: 0.8em;
-    color: #444;
-}
-
-#searchbar input[type="text"]:focus {
-    outline: none;
-}
-
-#searchbar input[type="submit"]{
-    border-left: 1px solid #fff;
-    padding: 0;
-    width: 24px;
-    height: 19px;
-    text-align: center;
-    background-color: #e1d5c2;
-}
-
-#searchbar input[type="submit"]:hover{
-    border-left: 1px solid #999;
-    background-color: #c7f2fd;
-}
-
-/* styles for the suggestion div block and the spans in it*/
-#suggestionDiv {
-    position: absolute;
-    padding: 0;
-    margin: 0;
-    right: -1px;
-    background-color: #fff;
-    font-size: 0.85em;
-    z-index: 9999;
-    border-bottom-right-radius: 4px;
-    border-bottom-left-radius: 4px;
-    border: 1px solid rgba(0,0,0,.15);
-    box-shadow: 2px 10px 12px 2px rgba(0,0,0,.175);
-}
-
-#suggestionDiv span {
-    display: block;
-    padding: 4px 3px 4px 10px;
-    cursor: default;
-    min-width: 178px;
-    white-space: nowrap;
-}
-
-#suggestionDiv span:hover {
-    background-color: #F5DEB3;
-}
-
-/* styles for sorting select list */
-.sorting {
-    display: inline-block;
-    float: right;
-}
-
-.sorting select {
-    font-size: 0.8em;
-    color: #666;
-}
-
-/* styles for panigation buttons */
-.pagination {
-    float: right;
-    margin-top: 0px;
-}
-
-.pagination select {
-    color: #666;
-}
-
-.pagination ul {
-    list-style-type: none;
-    margin-top: 0px;
-    padding: 0;
-    display: inline-block;
-    margin-left: 30px;
-}
-
-.pagination li {
-    display: inline-block;
-    border: 0px;
-    padding: 0px;
-    margin-left: 5px;
-
-}
-
-.pagination li a {
-    display: inline-block;
-    text-decoration: none;
-    border: 1px solid #999;
-    text-align: center;
-    font-size: 0.7em;
-    padding: 1px;
-    width: 12px;
-    height: 14px;
-    border-radius: 2px;
-}
-
-.pagination li a.active {
-    background-color: #eee;
-}
-
-.pagination li a.enabled {
-    font-weight: bold;
-}
-
-.pagination li a.disabled {
-    pointer-events: none;
-    cursor: default;
-    color: #bbb;
-}
-
-.pagination li a:hover,
-.pagination li a:active,
-.pagination li a:focus
-{
-    text-decoration: none;
-    color: #5c605c;
-    border: 1px solid #5c605c;
-}
-
-/*styles for new media form*/
-.new-media form{
-    /*width: 800px; border: 1px solid #bbb; margin-top: 10px; padding: 10px;*/
-}
-
-.new-media input[type="text"], .new-media textarea{
-    border: 1px solid #bbb;
-    color: #333;
-    border-radius: 2px;
-    font-size: 13px;
-    padding: 2px;
-    margin-top: 8px;
-}
-
-
-
-/*styles for the thumbnails on the homepage */
-#thumbnails a {
-    text-decoration: none;
-}
-
-#thumbnails a:hover {
-    text-decoration: none;
-}
-
-#thumbnails img {
-    border: solid 3px #448C9A;
-    border-radius: 10px;
-    margin: 5px;
-    padding: 1px;
-    width: 150px;
-
-    /*for Firefox */
-    -moz-border-radius: 10px;
-}
-
-#thumbnails img:hover {
-    border: solid 6px #393ECE;
-    margin: 2px}
