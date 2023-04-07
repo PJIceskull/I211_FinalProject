@@ -16,7 +16,8 @@ class PhotoModel
     private $tblPhotos;
     private $tblCategories;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->db = Database::getDatabase();
         $this->dbConnection = $this->db->getConnection();
         $this->tblPhotos = $this->db->getPhotos();
@@ -27,7 +28,8 @@ class PhotoModel
     * this method retrieves all photos from the database and
     * returns an array of photos objects if successful or false if failed.
     */
-    public function getPhotos() {
+    public function getPhotos()
+    {
         //SQL select statement
         $sql = "SELECT * FROM " . $this->db->getPhotos();
 
@@ -54,17 +56,18 @@ class PhotoModel
         }
         return false;
     }
+
     //search the database for photos that match words in titles. Return an array of photos if successful; false otherwise.
-    public function search_photo($terms) {
+    public function search_photo($terms)
+    {
         $terms = explode(" ", $terms); //explode multiple terms into an array
         //select statement for AND search
-        $sql = "SELECT * FROM " . $this->tblProducts .
+        $sql = "SELECT * FROM " . $this->tblPhotos .
             " WHERE 1";
 
-    foreach ($terms as $term) {
+        foreach ($terms as $term) {
             $sql .= " AND product_name LIKE '%" . $term . "%'";
         }
-
 
 
         //execute the query
@@ -88,7 +91,7 @@ class PhotoModel
             $photo = new Photo($obj->product_id, $obj->product_name, $obj->description, $obj->author, $obj->price, $obj->img);
 
             //set the id for the photo
-           // $photo->setId($obj->product_id);
+            // $photo->setId($obj->product_id);
 
             //add the photo into the array
             $photos[] = $photo;
@@ -102,9 +105,9 @@ class PhotoModel
     {
         //the select sql statement
 
-        $sql = "SELECT * FROM " . $this->tblProducts ."," .$this->tblOrder_details.
-            " WHERE " . $this->tblProducts . ".product_id=" . $this->tblOrder_details . ".product_id" .
-        " AND " . $this->tblProducts . " .product_id='$id'";
+        $sql = "SELECT * FROM " . $this->tblPhotos . "," . $this->tblCategories_details .
+            " WHERE " . $this->tblPhotos . ".photo_id=" . $this->tblCategories_details . ".photo_id" .
+            " AND " . $this->tblPhotos . " .photo_id='$id'";
 
         $query = $this->dbConnection->query($sql);
 
@@ -112,24 +115,21 @@ class PhotoModel
             echo "failed";
         }
 
-            if ($query && $query->num_rows > 0) {
-                $obj = $query->fetch_object();
+        if ($query && $query->num_rows > 0) {
+            $obj = $query->fetch_object();
 
-                //create a photo object
-                $photo = new Photo(null,$obj->product_name, $obj->description, $obj->author, $obj->price, $obj->img);
+            //create a photo object
+            $photo = new Photo(null, $obj->product_name, $obj->description, $obj->author, $obj->price, $obj->img);
 
-                //set the id for the product
-                $photo->setId($obj->id);
+            //set the id for the product
+            $photo->setId($obj->id);
 
-                //create a photo object
-                //$photo = new Photo(stripslashes($obj->product_name), stripslashes($obj->description), stripslashes($obj->author), stripslashes($obj->price), stripslashes($obj->image) );
-
-
+            //create a photo object
+            //$photo = new Photo(stripslashes($obj->product_name), stripslashes($obj->description), stripslashes($obj->author), stripslashes($obj->price), stripslashes($obj->image) );
 
 
-
-                return $photo;
-            }
+            return $photo;
+        }
 
 
     }
