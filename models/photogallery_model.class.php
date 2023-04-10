@@ -12,6 +12,7 @@ class PhotoModel
 {
     private $db; //database object
     private $dbConnection; //database connection object
+    static private $_instance = NULL;
     private $tblPhotos;
     private $tblCategories;
 
@@ -104,8 +105,8 @@ class PhotoModel
     {
         //the select sql statement
 
-        $sql = "SELECT * FROM " . $this->tblPhotos . "," . $this->tblCategories_details .
-            " WHERE " . $this->tblPhotos . ".photo_id=" . $this->tblCategories_details . ".photo_id" .
+        $sql = "SELECT * FROM " . $this->tblPhotos . "," . $this->tblCategories .
+            " WHERE " . $this->tblPhotos . ".photo_id=" . $this->tblCategories . ".photo_id" .
             " AND " . $this->tblPhotos . " .photo_id='$id'";
 
         $query = $this->dbConnection->query($sql);
@@ -118,7 +119,7 @@ class PhotoModel
             $obj = $query->fetch_object();
 
             //create a photo object
-            $photo = new Photo(null, $obj->product_name, $obj->description, $obj->author, $obj->price, $obj->img);
+            $photo = new Photo(null, $obj->name, $obj->description, $obj->price, $obj->img);
 
             //set the id for the product
             $photo->setId($obj->id);

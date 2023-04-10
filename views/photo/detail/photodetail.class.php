@@ -1,12 +1,4 @@
 <?php
-/**
- * Name: Jay Dawson II
- * Date: 11/17/22
- * File:photodetail.class.php
- * Description:
- */
-
-
 
 class PhotoDetail extends PhotoIndex {
 
@@ -15,14 +7,13 @@ class PhotoDetail extends PhotoIndex {
         parent::displayHeader("Photo Details");
 
         //retrieve photo details by calling get methods
-        $id = $photo->getId();
+        $id = $photo->getPhotoId();
         $name = $photo->getName();
-        $description = $photo->getDescription();
-        $imageURL = $photo->getImageURL();
-        $price = $photo->getPrice();
         $image = $photo->getImageURL();
+        $price = $photo->getPrice();
+        $description = $photo->getDescription();
         if (strpos($image, "http://") === false and strpos($image, "https://") === false) {
-            $image = BASE_URL . "/" . PHOTO_IMG . $image;
+            $image = BASE_URL . "/". PHOTO_IMG . $image;
         }
         ?>
 
@@ -35,9 +26,8 @@ class PhotoDetail extends PhotoIndex {
                     <img src="<?= $image ?>" alt="<?= $name ?>" />
                 </td>
                 <td style="width: 130px;">
-                    <p><strong>Product Name:</strong></p>
+                    <p><strong>Name:</strong></p>
                     <p><strong>Description:</strong></p>
-                    <p><strong>Author:</strong></p>
                     <p><strong>Price:</strong></p>
                     <div id="button-group">
                         <input type="button" id="edit-button" value="   Edit   "
@@ -47,7 +37,7 @@ class PhotoDetail extends PhotoIndex {
                 <td>
                     <p><?= $name ?></p>
                     <p><?= $description ?></p>
-                    <p><?= $imageURL ?></p>
+                    <p><?= $image ?></p>
                     <p><?= $price ?></p>
                     <div id="confirm-message"><?= $confirm ?></div>
                 </td>
