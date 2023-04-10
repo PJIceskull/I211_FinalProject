@@ -88,17 +88,16 @@ class PhotoModel
 
         //loop through all rows in the returned recordsets
         while ($obj = $query->fetch_object()) {
-            $photo = new Photo($obj->product_id, $obj->product_name, $obj->description, $obj->author, $obj->price, $obj->img);
+            $photo = new Photo($obj->photo_id, $obj->Name, $obj->imageURL, $obj->Price, $obj->description, $obj->img);
 
             //set the id for the photo
-            // $photo->setId($obj->product_id);
+//             $photo->setId($obj->photo_id);
+            $photo->setPhotoId($obj->photo_id);
 
             //add the photo into the array
             $photos[] = $photo;
         }
-
         return $photos;
-
     }
 
     public function view_photo($id)
@@ -106,7 +105,7 @@ class PhotoModel
         //the select sql statement
 
         $sql = "SELECT * FROM " . $this->tblPhotos . "," . $this->tblCategories .
-            " WHERE " . $this->tblPhotos . ".photo_id=" . $this->tblCategories . ".photo_id" .
+            " WHERE " . $this->tblPhotos . ".photo_id=" . $this->tblCategories . ".category_id" .
             " AND " . $this->tblPhotos . " .photo_id='$id'";
 
         $query = $this->dbConnection->query($sql);
@@ -119,14 +118,13 @@ class PhotoModel
             $obj = $query->fetch_object();
 
             //create a photo object
-            $photo = new Photo(null, $obj->name, $obj->description, $obj->price, $obj->img);
+            $photo = new Photo(null, $obj->Name, $obj->imageURL, $obj->Price, $obj->description);
 
-            //set the id for the product
-            $photo->setId($obj->id);
+            //set the id for the photo
+            $photo->setPhotoId($obj->photo_id);
 
             //create a photo object
             //$photo = new Photo(stripslashes($obj->product_name), stripslashes($obj->description), stripslashes($obj->author), stripslashes($obj->price), stripslashes($obj->image) );
-
 
             return $photo;
         }

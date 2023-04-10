@@ -29,6 +29,7 @@ class Photo
         return $this->photo_id;
     }
 
+    // Function to set Photo's ID
     public function setPhotoId($photo_id){
         $this->photo_id = $photo_id;
     }
