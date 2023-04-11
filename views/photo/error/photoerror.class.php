@@ -6,7 +6,7 @@
  * Description: Define Photo Error Class
  */
 
-class PhotoError extends PhotoIndexView {
+class PhotoError extends PhotoIndex {
 
     public function display($message) {
 
@@ -31,7 +31,7 @@ class PhotoError extends PhotoIndexView {
             </tr>
         </table>
         <br><br><br><br><hr>
-        <a href="<?= BASE_URL ?>/movie/index">Back to movie list</a>
+        <a href="<?= BASE_URL ?>/index">Back to movie list</a>
         <?php
         //display page footer
         parent::displayFooter();
