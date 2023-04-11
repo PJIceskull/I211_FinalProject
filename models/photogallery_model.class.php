@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Author: Jay Dawson II
  * Date: 03-05-2023
