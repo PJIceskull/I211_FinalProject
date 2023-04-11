@@ -42,7 +42,7 @@ class PhotoSearch extends PhotoIndex {
                     }
 
                     echo "<div class='item'><p><a href='" . BASE_URL . "/photo/detail/$id'><img src='" . $image .
-                        "'></a><span>$title<br>Rated $rating<br>" . $release_date->format('m-d-Y') . "</span></p></div>";
+                        "'></a> <span>$name<br> Description: $description</br>" . "<br>Price: $price</br>" . "</span></p></div>";
 
                 }
             }

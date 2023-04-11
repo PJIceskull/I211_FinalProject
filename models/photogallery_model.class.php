@@ -65,7 +65,7 @@ class PhotoModel
             " WHERE 1";
 
         foreach ($terms as $term) {
-            $sql .= " AND product_name LIKE '%" . $term . "%'";
+            $sql .= " AND name LIKE '%" . $term . "%'";
         }
 
 
@@ -87,7 +87,7 @@ class PhotoModel
 
         //loop through all rows in the returned recordsets
         while ($obj = $query->fetch_object()) {
-            $photo = new Photo($obj->photo_id, $obj->Name, $obj->imageURL, $obj->Price, $obj->description, $obj->img);
+            $photo = new Photo($obj->photo_id, $obj->Name, $obj->imageURL, $obj->Price, $obj->description);
 
             //set the id for the photo
 //             $photo->setId($obj->photo_id);
