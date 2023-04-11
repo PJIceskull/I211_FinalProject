@@ -11,26 +11,12 @@ class PhotoView extends PhotoIndex {
     parent::displayHeader("Photogallery");
         ?>
 
-<!--        <!DOCTYPE HTML>-->
-<!--        <html>-->
-<!--        <head>-->
-<!--            <title>Photos Available</title>-->
-<!--            <link type='text/css' rel='stylesheet' href='--><?//= BASE_URL ?><!--/www/css/app_style.css' />-->
-<!--        </head>-->
-        <!--create the search bar -->
-<!--        <div id="searchbar">-->
-<!--            <form method="get" action="--><?//= BASE_URL ?><!--/photo/search">-->
-<!--                <input type="text" name="query-terms" id="searchtextbox" placeholder="Search photos by title" autocomplete="off" onkeyup="handleKeyUp(event)">-->
-<!--                <input type="submit" value="Go" />-->
-<!--            </form>-->
-<!--            <div id="suggestionDiv"></div>-->
-<!--        </div>-->
         <h2>Photos Available In Our Gallery: </h2>
 
             <?php
 
             if ($photos === 0) {
-                echo "No product was found.<br><br><br><br><br>";
+                echo "No Photos were found.<br><br><br><br><br>";
             } else {
                 //display photos
                 foreach ($photos as $photo) {
@@ -51,9 +37,8 @@ class PhotoView extends PhotoIndex {
 
             ?>
 
-        </body>
-        </html>
-
         <?php
+        //display page footer
+        parent::displayFooter();
     } //end of display method
 } // end of Photo View class
