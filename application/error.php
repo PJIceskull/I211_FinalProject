@@ -10,7 +10,7 @@
 
 $page_title = "Error";
 //display header
-IndexView::displayHeader($page_title);
+PhotoIndex::displayHeader($page_title);
 
 ?>
 <div id = "main-header">Error</div>
@@ -31,8 +31,8 @@ IndexView::displayHeader($page_title);
     </tr>
 </table>
 <br><br><br><br><hr>
-<a href="<?= BASE_URL ?>/photo/index">Back to photo list</a>
+<a href="<?= BASE_URL ?>">Back to photo list</a>
 
 <?php
 //display footer
-IndexView::displayFooter();
+PhotoIndex::displayFooter();
