@@ -43,7 +43,7 @@ class PhotoDetail extends PhotoIndex {
                 </td>
             </tr>
         </table>
-        <a href="<?= BASE_URL ?>/photo/index">Go to photo list</a>
+        <a href="<?= BASE_URL ?>">Go to photo list</a>
 
         <?php
         //display page footer
