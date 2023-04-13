@@ -104,8 +104,10 @@ class PhotoModel
         //the select sql statement
 
         $sql = "SELECT * FROM " . $this->tblPhotos . "," . $this->tblCategories .
-            " WHERE " . $this->tblPhotos . ".photo_id=" . $this->tblCategories . ".category_id" .
-            " AND " . $this->tblPhotos . " .photo_id='$id'";
+            " WHERE " . $this->tblPhotos . ".category_id=" . $this->tblCategories . ".category_id" .
+            " AND " . $this->tblPhotos . ".photo_id='$id'";
+
+//        exit($sql);
 
         $query = $this->dbConnection->query($sql);
 

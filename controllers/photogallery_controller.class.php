@@ -40,6 +40,8 @@ class PhotoController {
         //retrieve the specific photograph
 
         $photos = $this->photo_model->view_photo($id);
+//        var_dump($photos);
+//        exit();
 
         if (!$photos) {
             //display an error
