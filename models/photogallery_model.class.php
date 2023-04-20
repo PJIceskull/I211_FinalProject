@@ -99,8 +99,7 @@ class PhotoModel
         return $photos;
     }
 
-    public function view_photo($id)
-    {
+    public function view_photo($id) {
         //the select sql statement
 
         $sql = "SELECT * FROM " . $this->tblPhotos . "," . $this->tblCategories .
@@ -129,9 +128,58 @@ class PhotoModel
 
             return $photo;
         }
-
-
     }
+
+    public function update_photo($id) {
+        //if the script did not receive post data, display an error message and then terminate the script immediately
+        if (!filter_has_var(INPUT_POST, 'name') ||
+            !filter_has_var(INPUT_POST, 'imageURL') ||
+            !filter_has_var(INPUT_POST, 'price') ||
+            !filter_has_var(INPUT_POST, 'description')
+        ) {
+            return false;
+        }
+
+        //retrieve data for the new movie; data are sanitized and escaped for security.
+        $name = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING)));
+        $image = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'imageURL', FILTER_SANITIZE_STRING)));
+        $price = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'price', FILTER_SANITIZE_STRING)));
+        $description = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING)));
+//        $image = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'image', FILTER_SANITIZE_STRING)));
+
+        //query string for update
+        $sql = "UPDATE " . $this->tblPhotos .
+            " SET name='$name', imageURL='$image', price='$price', "
+            . "image='$image', description='$description' WHERE id='$id'";
+
+        //execute the query
+        return $this->dbConnection->query($sql);
+    }
+//    public function update($id) {
+//        //if the script did not receive post data, display an error message and then terminate the script immediately
+//        if (!filter_has_var(INPUT_POST, 'Name') ||
+//            !filter_has_var(INPUT_POST, 'imageURL') ||
+//            !filter_has_var(INPUT_POST, 'Price') ||
+//            !filter_has_var(INPUT_POST, 'description')
+//        ) {
+//            return false;
+//        }
+//
+//        //retrieve data for the new movie; data are sanitized and escaped for security.
+//        $name = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'Name', FILTER_SANITIZE_STRING)));
+//        $image = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'imageURL', FILTER_SANITIZE_STRING)));
+//        $price = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'Price', FILTER_SANITIZE_STRING)));
+//        $description = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING)));
+////        $image = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'image', FILTER_SANITIZE_STRING)));
+//
+//        //query string for update
+//        $sql = "UPDATE " . $this->tblPhotos .
+//            " SET Name='$name', imageURL='$image', Price='$price', "
+//            . "image='$image', description='$description' WHERE id='$id'";
+//
+//        //execute the query
+//        return $this->dbConnection->query($sql);
+//    }
 
 
 }

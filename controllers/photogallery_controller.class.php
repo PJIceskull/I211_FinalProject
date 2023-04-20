@@ -79,7 +79,7 @@ class PhotoController {
         $update = $this->photo_model->update_photo($id);
         if (!$update) {
             //handle errors
-            $message = "There was a problem updating the movie id='" . $id . "'.";
+            $message = "There was a problem updating the photo id='" . $id . "'.";
             $this->error($message);
             return;
         }
