@@ -55,8 +55,9 @@ class PhotoController {
         $view->display($photos);
     }
 
+    // Edit & Update Method
     // Insert Edit
-    //display a movie in a form for editing
+    // Display Photo in a form for editing
     public function edit($id) {
         //retrieve the specific movie
         $photo = $this->photo_model->view_photo($id);
@@ -71,6 +72,26 @@ class PhotoController {
         $view = new PhotoEdit();
         $view->display($photo);
     }
+
+    // Update Photo in the database
+    public function update($id) {
+        //update the photo
+        $update = $this->photo_model->update_photo($id);
+        if (!$update) {
+            //handle errors
+            $message = "There was a problem updating the movie id='" . $id . "'.";
+            $this->error($message);
+            return;
+        }
+
+        //display the updated movie details
+        $confirm = "The movie was successfully updated.";
+        $photo = $this->photo_model->view_photo($id);
+
+        $view = new PhotoDetail();
+        $view->display($photo, $confirm);
+    }
+
 
     //search photos
     public function search() {
