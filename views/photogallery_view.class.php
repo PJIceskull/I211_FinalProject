@@ -37,6 +37,7 @@ class PhotoView extends PhotoIndex {
 
             ?>
 
+
         <?php
         //display page footer
         parent::displayFooter();

@@ -28,7 +28,7 @@ class PhotoSearch extends PhotoIndex {
         <div class="grid-container">
             <?php
             if ($photos === 0) {
-                echo "No movie was found.<br><br><br><br><br>";
+                echo "No Photo was found.<br><br><br><br><br>";
             } else {
                 //display movies in a grid; six movies per row
                 foreach ($photos as $photo) {

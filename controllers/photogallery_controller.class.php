@@ -161,6 +161,22 @@ class PhotoController {
         return $photos;
     }
 
+    public function suggest($terms) {
+        //retrieve query terms
+        $query_terms = urldecode(trim($terms));
+        $photos = $this->photo_model->search_photo($query_terms);
+
+        //retrieve all movie titles and store them in an array
+        $titles = array();
+        if ($photos) {
+            foreach ($photos as $photo) {
+                $titles[] = $photo->getName();
+            }
+        }
+
+        echo json_encode($titles);
+    }
+
 
     //handle an error
     public function error($message) {
