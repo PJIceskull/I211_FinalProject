@@ -16,14 +16,12 @@ class ComposerStaticInit08d430758f7c032e073dc3e46879e31f
         'Photo' => __DIR__ . '/../..' . '/models/photogallery.class.php',
         'PhotoController' => __DIR__ . '/../..' . '/controllers/photogallery_controller.class.php',
         'PhotoDetail' => __DIR__ . '/../..' . '/views/photo/detail/photodetail.class.php',
+        'PhotoEdit' => __DIR__ . '/../..' . '/views/photo/edit/photo_edit.class.php',
         'PhotoError' => __DIR__ . '/../..' . '/views/photo/error/photoerror.class.php',
         'PhotoIndex' => __DIR__ . '/../..' . '/views/photo/index/photoindex.class.php',
         'PhotoModel' => __DIR__ . '/../..' . '/models/photogallery_model.class.php',
         'PhotoSearch' => __DIR__ . '/../..' . '/views/photo/search/photo_search.class.php',
         'PhotoView' => __DIR__ . '/../..' . '/views/photogallery_view.class.php',
-        'UserController' => __DIR__ . '/../..' . '/controllers/user_controller.class.php',
-        'UserError' => __DIR__ . '/../..' . '/views/user/error/error.class.php',
-        'UserModel' => __DIR__ . '/../..' . '/models/user_model.class.php',
         'WelcomeController' => __DIR__ . '/../..' . '/controllers/welcome_controller.class.php',
     );
 

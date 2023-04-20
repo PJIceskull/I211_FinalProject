@@ -55,7 +55,22 @@ class PhotoController {
         $view->display($photos);
     }
 
+    // Insert Edit
+    //display a movie in a form for editing
+    public function edit($id) {
+        //retrieve the specific movie
+        $photo = $this->photo_model->view_photo($id);
 
+        if (!$photo) {
+            //display an error
+            $message = "There was a problem displaying the photo id='" . $id . "'.";
+            $this->error($message);
+            return;
+        }
+
+        $view = new PhotoEdit();
+        $view->display($photo);
+    }
 
     //search photos
     public function search() {
