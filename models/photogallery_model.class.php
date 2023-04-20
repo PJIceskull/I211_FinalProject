@@ -74,8 +74,7 @@ class PhotoModel
 
         // the search failed, return false.
         if (!$query)
-            throw new DataMissingException(
-                "Database exclusion failed. ");
+          return 0;
 
         //search succeeded, but no photo was found.
         if ($query->num_rows == 0)

@@ -31,7 +31,7 @@ class PhotoError extends PhotoIndex {
             </tr>
         </table>
         <br><br><br><br><hr>
-        <a href="<?= BASE_URL ?>">Back to movie list</a>
+        <a href="<?= BASE_URL ?>">Back to photo list</a>
         <?php
         //display page footer
         parent::displayFooter();

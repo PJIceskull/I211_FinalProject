@@ -7,7 +7,7 @@ var activeTitle = -1;  //movie title currently being selected
 var searchBoxObj, suggestionBoxObj;
 
 //this function creates a XMLHttpRequest object. It should work with most types of browsers.
-function createXmlHttpRequestObject() {
+ function createXmlHttpRequestObject() {
     // create a XMLHttpRequest object compatible to most browsers
     if (window.ActiveXObject) {
         return new ActiveXObject("Microsoft.XMLHTTP");
@@ -22,11 +22,12 @@ function createXmlHttpRequestObject() {
 //initial actions to take when the page load
 window.onload = function () {
     //create an XMLHttpRequest object by calling the createXmlHttpRequestObject function
-    xmlHttp = createXmlHttpRequestObject();
-
+  xmlHttp = createXmlHttpRequestObject();
     //DOM objects
     searchBoxObj = document.getElementById('searchtextbox');
     suggestionBoxObj = document.getElementById('suggestionDiv');
+    searchBoxObj.addEventListener('keyup', handleKeyUp);
+
 };
 
 window.onclick = function () {
@@ -41,32 +42,34 @@ function suggest(query) {
         return;
     }
 
-    //proceed only if the search term isn't empty
-    // open an asynchronous request to the server.
-    xmlHttp.open("GET", base_url + "/" + media + "/suggest/" + query, true);
+        //proceed only if the search term isn't empty
+        // open an asynchronous request to the server.
+        xmlHttp.open("GET", base_url + "/photo/suggest/" + query, true);
 
-    //handle server's responses
-    xmlHttp.onreadystatechange = function () {
-        // proceed only if the transaction has completed and the transaction completed successfully
-        if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
-            // extract the JSON received from the server
-            var titles = JSON.parse(xmlHttp.responseText);
-            //console.log(titlesJSON);
-            // display suggested titles in a div block
-            displayTitles(titles);
+
+        //handle server's responses
+       xmlHttp.onreadystatechange = function () {
+            // proceed only if the transaction has completed and the transaction completed successfully
+            if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+                // extract the JSON received from the server
+                var name = JSON.parse(xmlHttp.responseText);
+                //console.log(titlesJSON);
+                // display suggested titles in a div block
+                displayName(name);
+            }
         }
-    };
 
-    // make the request
-    xmlHttp.send(null);
-}
+
+        // make the request
+        xmlHttp.send(null);
+    }
 
 
 /* This function populates the suggestion box with spans containing all the titles
  * The parameter of the function is a JSON object
  * */
-function displayTitles(titles) {
-    numTitles = titles.length;
+function displayName(name) {
+    numTitles = name.length;
     //console.log(numTitles);
     activeTitle = -1;
     if (numTitles === 0) {
@@ -77,8 +80,8 @@ function displayTitles(titles) {
 
     var divContent = "";
     //retrive the titles from the JSON doc and create a new span for each title
-    for (i = 0; i < titles.length; i++) {
-        divContent += "<span id=s_" + i + " onclick='clickTitle(this)'>" + titles[i] + "</span>";
+    for (i = 0; i < name.length; i++) {
+        divContent += "<span id=s_" + i + " onclick='clickTitle(this)'>" + name[i] + "</span>";
     }
     //display the spans in the div block
     suggestionBoxObj.innerHTML = divContent;
