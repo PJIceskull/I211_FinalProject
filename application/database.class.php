@@ -18,6 +18,8 @@ class Database {
         'database' => 'photo_gallery_final',
         'tblPhotos' => 'photos',
         'tblCategories' => 'categories',
+        'tblUser' => 'users'
+
     );
     //define the database connection object
     private $objDBConnection = NULL;
@@ -53,6 +55,10 @@ class Database {
 
     public function getCategories(){
         return $this->param['tblCategories'];
+    }
+
+    public function getUserTable() {
+        return $this->param['tblUser'];
     }
 
 

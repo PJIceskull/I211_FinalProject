@@ -11,8 +11,14 @@ class ComposerStaticInit08d430758f7c032e073dc3e46879e31f
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
         'Composer\\Autoload\\ComposerStaticInit08d430758f7c032e073dc3e46879e31f' => __DIR__ . '/..' . '/composer/autoload_static.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'DataLengthException' => __DIR__ . '/../..' . '/exceptions/data_length_exception.class.php',
+        'DataMissingException' => __DIR__ . '/../..' . '/exceptions/data_missing_exception.class.php',
         'Database' => __DIR__ . '/../..' . '/application/database.class.php',
+        'DatabaseException' => __DIR__ . '/../..' . '/exceptions/database_exception.class.php',
         'Dispatcher' => __DIR__ . '/../..' . '/application/dispatcher.class.php',
+        'EmailFormatException' => __DIR__ . '/../..' . '/exceptions/email_format_exception.class.php',
+        'Home' => __DIR__ . '/../..' . '/views/home/home_index.class.php',
+        'Login' => __DIR__ . '/../..' . '/views/login/login.class.php',
         'Photo' => __DIR__ . '/../..' . '/models/photogallery.class.php',
         'PhotoController' => __DIR__ . '/../..' . '/controllers/photogallery_controller.class.php',
         'PhotoDetail' => __DIR__ . '/../..' . '/views/photo/detail/photodetail.class.php',
@@ -22,6 +28,8 @@ class ComposerStaticInit08d430758f7c032e073dc3e46879e31f
         'PhotoModel' => __DIR__ . '/../..' . '/models/photogallery_model.class.php',
         'PhotoSearch' => __DIR__ . '/../..' . '/views/photo/search/photo_search.class.php',
         'PhotoView' => __DIR__ . '/../..' . '/views/photogallery_view.class.php',
+        'UserController' => __DIR__ . '/../..' . '/controllers/user_controller.class.php',
+        'UserModel' => __DIR__ . '/../..' . '/models/user_model.class.php',
         'WelcomeController' => __DIR__ . '/../..' . '/controllers/welcome_controller.class.php',
     );
 

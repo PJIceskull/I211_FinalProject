@@ -25,25 +25,21 @@ class PhotoDetail extends PhotoIndex {
                 <td style="width: 150px;">
                     <img src="<?= $image ?>" alt="<?= $name ?>" />
                 </td>
-                <td style="width: 130px;">
-                    <p><strong>Name:</strong></p>
-                    <p><strong>Description:</strong></p>
-                    <p><strong>Price:</strong></p>
+
+                <td>
+                    <p> <b>Name:</b> <?= $name ?></p>
+                    <p> <b>Description:</b><?= $description ?></p>
+                    <p> <b>Image:</b><?= $image ?></p>
+                    <p> <b>Price:</b> <?= $price ?></p>
                     <div id="button-group">
                         <input type="button" id="edit-button" value="   Edit   "
                                onclick="window.location.href = '<?= BASE_URL ?>/photo/edit/<?= $id ?>'">&nbsp;
                     </div>
-                </td>
-                <td>
-                    <p><?= $name ?></p>
-                    <p><?= $description ?></p>
-                    <p><?= $image ?></p>
-                    <p><?= $price ?></p>
                     <div id="confirm-message"><?= $confirm ?></div>
                 </td>
             </tr>
         </table>
-        <a href="<?= BASE_URL ?>">Go to photo list</a>
+        <a href="<?= BASE_URL ?>/photo/index">Go to photo list</a>
 
         <?php
         //display page footer
