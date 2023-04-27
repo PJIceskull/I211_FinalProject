@@ -19,7 +19,6 @@ class Database {
         'tblPhotos' => 'photos',
         'tblCategories' => 'categories',
         'tblUser' => 'users'
-
     );
     //define the database connection object
     private $objDBConnection = NULL;
@@ -36,7 +35,6 @@ class Database {
             exit();
         }
     }
-
     //static method to ensure there is just one Database instance
     static public function getDatabase() {
         if (self::$_instance == NULL)
@@ -60,6 +58,4 @@ class Database {
     public function getUserTable() {
         return $this->param['tblUser'];
     }
-
-
 }

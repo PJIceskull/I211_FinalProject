@@ -1,6 +1,5 @@
 <?php
 
-
 class PhotoIndex {
 //this method displays the page header
     static public function displayHeader($page_title) {
@@ -26,7 +25,7 @@ class PhotoIndex {
                 <a href="<?= BASE_URL ?>/welcome/index">HOME</a>
                 <a href="<?= BASE_URL ?>/photo/index">PHOTO</a>
                 <a href="#">ABOUT</a>
-                <a href="<?= BASE_URL ?>/login/">LOGIN</a>
+                <a href="<?= BASE_URL ?>/user/login">LOGIN</a>
             </nav>
         <div id="heroContent">
             <h5> Aquatic Photo Gallery <h5/>
