@@ -325,7 +325,7 @@ div.bottom-row {
     overflow: hidden;
 }
 
-div input{
+.middle-row div input{
     padding: 10px 0;
     margin-bottom: 25px;
 }
