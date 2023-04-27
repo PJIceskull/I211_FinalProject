@@ -11,8 +11,7 @@ require_once("application/config.php");
 //load autoloader
 require_once("vendor/autoload.php");
 
-
-$user_controller = new UserController();
+//$user_controller = new UserController();
 
 //load the dispatcher that dissects a request URL
 new Dispatcher();
