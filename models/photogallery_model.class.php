@@ -140,16 +140,16 @@ class PhotoModel
         }
 
         //retrieve data for the new movie; data are sanitized and escaped for security.
-        $name = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING)));
-        $image = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'imageURL', FILTER_SANITIZE_STRING)));
-        $price = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'price', FILTER_SANITIZE_STRING)));
-        $description = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING)));
+        $name = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'name', FILTER_DEFAULT)));
+        $image = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'imageURL', FILTER_DEFAULT)));
+        $price = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'price', FILTER_DEFAULT)));
+        $description = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'description', FILTER_DEFAULT)));
 //        $image = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'image', FILTER_SANITIZE_STRING)));
 
         //query string for update
         $sql = "UPDATE " . $this->tblPhotos .
-            " SET name='$name', imageURL='$image', price='$price', "
-            . "image='$image', description='$description' WHERE id='$id'";
+            " SET Name='$name', imageURL='$image', Price=$price, "
+            . "description='$description' WHERE photo_id=$id";
 
         //execute the query
         return $this->dbConnection->query($sql);

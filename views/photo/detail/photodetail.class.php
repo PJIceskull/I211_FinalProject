@@ -38,7 +38,6 @@ class PhotoDetail extends PhotoIndex {
                     <p><?= $name ?></p>
                     <p><?= $description ?></p>
                     <p><?= $price ?></p>
-
                     <div id="confirm-message"><?= $confirm ?></div>
                 </td>
             </tr>
@@ -49,7 +48,6 @@ class PhotoDetail extends PhotoIndex {
                                onclick="window.location.href = '<?= BASE_URL ?>/photo/edit/<?= $id ?>'">&nbsp;
                     </div>
                 </td>
-
             </tr>
         </table>
         <a href="<?= BASE_URL ?>/photo/index">Go to photo list</a>

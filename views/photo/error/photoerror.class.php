@@ -16,10 +16,11 @@ class PhotoError extends PhotoIndex {
 
         <div id="main-header">Error</div>
         <hr>
+        <br>
         <table style="width: 100%; border: none">
             <tr>
-                <td style="vertical-align: middle; text-align: center; width:100px">
-                    <img src='<?= BASE_URL ?>/www/img/error.jpg' style="width: 80px; border: none"/>
+                <td style="vertical-align: middle; text-align: center; max-width:300px">
+                    <img src='<?= BASE_URL ?>/www/img/error.jpg' style="  border: none"/>
                 </td>
                 <td style="text-align: left; vertical-align: top;">
                     <h3> Sorry, but an error has occurred.</h3>
@@ -30,8 +31,9 @@ class PhotoError extends PhotoIndex {
                 </td>
             </tr>
         </table>
-        <br><br><br><br><hr>
-        <a href="<?= BASE_URL ?>">Back to photo list</a>
+        <br>
+        <hr>
+        <a href="<?= BASE_URL ?>/photo/index">Back to photo list</a>
         <?php
         //display page footer
         parent::displayFooter();

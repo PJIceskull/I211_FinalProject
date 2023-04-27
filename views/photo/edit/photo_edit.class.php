@@ -28,7 +28,7 @@ class PhotoEdit extends PhotoIndex {
             </p>
 <!--            Image Url-->
             <p><strong>Image</strong>: url (http:// or https://) or local file including path and file extension<br>
-                <input name="image" type="text" size="100" required value="<?= $image ?>">
+                <input name="imageURL" type="text" size="100" required value="<?= $image ?>">
             </p>
 <!--            Description -->
             <p><strong>Description</strong>:<br>
