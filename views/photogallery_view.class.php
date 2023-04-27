@@ -12,6 +12,14 @@ class PhotoView extends PhotoIndex {
         ?>
 
         <h2>Photos Available In Our Gallery: </h2>
+        <div id='wrapper'>
+        <div id="searchbar">
+            <form method="get" action="<?= BASE_URL ?>/photo/search">
+                <input type="text" name="query-terms" id="searchtextbox" placeholder="Search photos by title" autocomplete="off" onkeyup="handleKeyUp(event)">
+                <input type="submit" value="Go" />
+            </form>
+            <div id="suggestionDiv"></div>
+        </div>
 
             <?php
 

@@ -21,25 +21,28 @@ class PhotoIndex {
         </head>
         <body>
         <div id="top"></div>
-        <div id='wrapper'>
         <div id="banner">
-                <div id="left">
-                    <h5> Aquatic Photo Gallery <h5/>
-                    <div style='color: #000; font-size: 14pt; font-weight: bold'>Take a look at what we have!</div>
-                </div>
-
-           <!-- <div id="right">
-                <img src="<?/*= BASE_URL */?>/www/img/ " style="width: 400px; border: none" />
-            </div>-->
+            <nav>
+                <a href="<?= BASE_URL ?>/welcome/index">HOME</a>
+                <a href="<?= BASE_URL ?>/photo/index">PHOTO</a>
+                <a href="#">ABOUT</a>
+                <a href="<?= BASE_URL ?>/login/">LOGIN</a>
+            </nav>
+        <div id="heroContent">
+            <h5> Aquatic Photo Gallery <h5/>
+                <div style='color: #000; font-size: 14pt; font-weight: bold'>Take a look at what we have!</div>
+        </div>
         </div>
 
+       <!-- <div id='wrapper'>
         <div id="searchbar">
             <form method="get" action="<?= BASE_URL ?>/photo/search">
                 <input type="text" name="query-terms" id="searchtextbox" placeholder="Search photos by title" autocomplete="off" onkeyup="handleKeyUp(event)">
                 <input type="submit" value="Go" />
             </form>
             <div id="suggestionDiv"></div>
-        </div>
+        </div> -->
+
         <?php
     }//end of displayHeader function
 

@@ -9,6 +9,11 @@
     padding: 0;
 }
 
+@font-face {
+    font-family:LexReg;
+    src: url(../css/fonts/LexendDeca-Regular.ttf);
+}
+
 html, body {
     width: 100%;
     height: 100%;
@@ -29,7 +34,7 @@ p {
     text-align: center;
 }
 
-h1, h2, h3, h4, h6 {
+h1, h2, h4, h6 {
     text-align: center;
     padding: 0 0 0.4em;
     color: #5c605c;
@@ -66,12 +71,11 @@ hr {
 /*}*/
 
 #wrapper {
-    min-height: 100%;
     height: auto !important;
-    height: 100%;
     margin: 0 auto;
     text-align:center;
-    width:960px;
+    width:1080px;
+    height: 100%;
 }
 
 
@@ -91,7 +95,7 @@ hr {
 
 /*style for the banner */
 #banner {
-    background-image: url("../../www/img/Aquatic-Hero.jpg");
+    background-image: linear-gradient(to bottom, rgba(55, 100, 200, .5), rgba(55, 100, 200, .3)), url("../../www/img/Aquatic-Hero.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0 auto;
@@ -103,9 +107,9 @@ hr {
 
 #banner #heroContent {
     color: white;
-    font-size: 36px;
-    margin-top: 150px;
-    text-align: center;
+    font-size: 24px;
+    margin-right: 125px;
+    margin-top: 200px;
     font-family: LexReg;
 }
 
@@ -118,36 +122,46 @@ nav {
 nav a{
     color: white;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
     font-family: LexReg;
     align-items: end;
     padding: 0 50px;
 }
 
 #about {
-    height: 500px;
+    margin: 100px auto;
+    width: 1600px;
 }
 #about .flex-container {
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: row;
-    margin: 60px auto;
 }
-#about .flex-container .boxOne, #about .flex-container .boxTwo, #about .flex-container .boxThree {
+#about .flex-container .boxOne,
+#about .flex-container .boxTwo,
+#about .flex-container .boxThree {
     width: 300px;
     height: 300px;
     border-radius: 20px;
-    padding: 30px 20px 0px 20px;
     text-align: center;
     font-family: LexReg;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
-#about .flex-container .boxOne i, #about .flex-container .boxTwo i, #about .flex-container .boxThree i {
+#about .flex-container .boxOne i,
+#about .flex-container .boxTwo i,
+#about .flex-container .boxThree i {
     font-size: 36px;
-    padding: 10px;
+    padding: 25px;
 }
 
+#about .flex-container .boxOne h3,
+#about .flex-container .boxTwo h3,
+#about .flex-container .boxThree h3 {
+    text-align: center;
+    color: lightblue;
+    padding-bottom: 20px;
+}
 
 
 
@@ -182,8 +196,12 @@ span.rcd-numbers {
 /*    justify-content: flex-start;*/
 /*}*/
 
+table{
+    margin: auto;
+}
 
-.item {;
+.item {
+    margin-top: 40px;
     float: left;
     min-height: 1px;
     padding: 10px;
@@ -226,12 +244,9 @@ span.rcd-numbers {
 /* style for the search bar */
 #searchbar {
     float: left;
-    margin-top: 10px;
-    margin-right: 0px;
-    position: relative;
+    position: absolute;
     border: #bbb 1px solid;
     border-radius: 0px;
-
 }
 
 #searchbar input{
@@ -262,5 +277,23 @@ span.rcd-numbers {
 
 #suggestionDiv span:hover {
     background-color: #F5DEB3;
+}
+
+td img{
+    width: 350px;
+    height: 400px;
+    padding-right: 50px;
+    padding-top: 20px;
+}
+
+td p{
+    width: 500px;
+    display: block;
+    font-family: LexReg;
+    overflow: hidden;
+}
+
+td p b{
+    display: block;
 }
 

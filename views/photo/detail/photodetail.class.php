@@ -25,10 +25,6 @@ class PhotoDetail extends PhotoIndex {
                 <td style="width: 150px;">
                     <img src="<?= $image ?>" alt="<?= $name ?>" />
                 </td>
-<!--                Table data to hold image url -->
-<!--                <td>-->
-<!--                    <p>--><?//= $image ?><!--</p>-->
-<!--                </td>-->
                 <td style="width: 130px;">
                     <p><strong>Name:</strong></p>
                     <p><strong>Description:</strong></p>
@@ -41,11 +37,8 @@ class PhotoDetail extends PhotoIndex {
                 <td>
                     <p><?= $name ?></p>
                     <p><?= $description ?></p>
+                    <p><?= $image ?></p>
                     <p><?= $price ?></p>
-
-                </td>
-<!--                Table data to hold confirm data-->
-                <td>
                     <div id="confirm-message"><?= $confirm ?></div>
                 </td>
             </tr>
