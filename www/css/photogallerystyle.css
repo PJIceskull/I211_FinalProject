@@ -283,12 +283,12 @@ table{
 td img{
     width: 350px;
     height: 400px;
-    padding-right: 50px;
+    /*padding-right: 50px;*/
     padding-top: 20px;
 }
 
 td p{
-    width: 500px;
+    /*max-width: 350px;*/
     display: block;
     font-family: LexReg;
     overflow: hidden;

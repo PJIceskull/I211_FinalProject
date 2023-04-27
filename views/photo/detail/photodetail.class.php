@@ -28,14 +28,11 @@ class PhotoDetail extends PhotoIndex {
 <!--                <td>-->
 <!--                    <p>--><?//= $image ?><!--</p>-->
 <!--                </td>-->
-                <td style="width: 130px;">
+                <td style="width: 200px;">
                     <p><strong>Name:</strong></p>
                     <p><strong>Description:</strong></p>
                     <p><strong>Price:</strong></p>
-                    <div id="button-group">
-                        <input type="button" id="edit-button" value="   Edit   "
-                               onclick="window.location.href = '<?= BASE_URL ?>/photo/edit/<?= $id ?>'">&nbsp;
-                    </div>
+
                 </td>
                 <td>
                     <p><?= $name ?></p>
@@ -44,6 +41,15 @@ class PhotoDetail extends PhotoIndex {
 
                     <div id="confirm-message"><?= $confirm ?></div>
                 </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="button-group">
+                        <input type="button" id="edit-button" value="   Edit   "
+                               onclick="window.location.href = '<?= BASE_URL ?>/photo/edit/<?= $id ?>'">&nbsp;
+                    </div>
+                </td>
+
             </tr>
         </table>
         <a href="<?= BASE_URL ?>/photo/index">Go to photo list</a>
