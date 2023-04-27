@@ -130,7 +130,8 @@ nav a{
 
 #about {
     margin: 100px auto;
-    width: 1600px;
+    /*width: 1600px;*/
+    width: 100%;
 }
 #about .flex-container {
     display: flex;
