@@ -42,7 +42,7 @@ h1, h2, h4, h6 {
 }
 
 h5{
-    padding-left: 250px;
+    /*padding-left: 250px;*/
     text-align: center;
     font-size: 250%;
     color: #ffffff;
@@ -74,7 +74,7 @@ hr {
     height: auto !important;
     margin: 0 auto;
     text-align:center;
-    width:1080px;
+    max-width:1080px;
     height: 100%;
 }
 
@@ -108,7 +108,7 @@ hr {
 #banner #heroContent {
     color: white;
     font-size: 24px;
-    margin-right: 125px;
+    /*margin-right: 125px;*/
     margin-top: 200px;
     font-family: LexReg;
 }
@@ -300,7 +300,7 @@ td p b{
 
 div.top-row {
     margin: auto;
-    width: 1080px;
+    max-width: 1080px;
     height: 50px;
     line-height: 50px;
     font-size: 18pt;
@@ -314,7 +314,7 @@ div.top-row {
 div.middle-row {
     min-height: 200px;
     margin: auto;
-    width: 1080px;
+    max-width: 1080px;
     padding: 20px 20px;
 }
 
