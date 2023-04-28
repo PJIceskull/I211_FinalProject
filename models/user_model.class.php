@@ -107,7 +107,8 @@ class UserModel {
 
             //execute the query and return true if successful or false if failed
             if ($this->dbConnection->query($sql) === TRUE) {
-                return "Successful";
+                return "You have successfully created an account!";
+                return $_COOKIE["user"];
             } else {
                 throw new DatabaseExecutionException("Database Error!");
             }
@@ -151,8 +152,8 @@ class UserModel {
         try {
 
             //retrieve username and password from a form
-            $username = trim(filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING));
-            $password = trim(filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING));
+            $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS);
+            $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_SPECIAL_CHARS);
             // if the username and password fields are empty, then throw the
             // DataMissingException.
             if (empty($username) || empty($password)) {

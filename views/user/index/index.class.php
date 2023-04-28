@@ -25,7 +25,6 @@ public function display() {
             <span style="float: left">Already have an account? <a href="<?=BASE_URL?>/user/login">Login</a></span>
             <span style="float: right"></span>
         </div>
-
     <?php
     parent::displayFooter();
 }

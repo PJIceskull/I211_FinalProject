@@ -85,7 +85,7 @@ class PhotoController {
         }
 
         //display the updated movie details
-        $confirm = "The movie was successfully updated.";
+        $confirm = "The photo was successfully updated.";
         $photo = $this->photo_model->view_photo($id);
 
         $view = new PhotoDetail();

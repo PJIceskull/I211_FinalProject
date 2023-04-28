@@ -19,7 +19,7 @@ class PhotoEdit extends PhotoIndex {
 ?>
         <div id="main-header">Edit Movie Details</div>
 
-        <!-- display movie details in a form -->
+        <!-- display photo details in a form -->
         <form class="new-media"  action='<?= BASE_URL . "/photo/update/" . $id ?>' method="post" style="border: 1px solid #bbb; margin-top: 10px; padding: 10px;">
             <input type="hidden" name="id" value="<?= $id ?>">
 <!--            Name of Photo-->

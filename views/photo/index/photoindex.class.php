@@ -1,8 +1,7 @@
 <?php
-
 class PhotoIndex {
 //this method displays the page header
-    static public function displayHeader($page_title) {
+    static public function displayHeader($page_title,) {
 
         ?>
         <!DOCTYPE html>
@@ -25,10 +24,15 @@ class PhotoIndex {
                 <a href="<?= BASE_URL ?>/photo/index">PHOTO</a>
                 <a href="#">ABOUT</a>
                 <a href="<?= BASE_URL ?>/user/login">LOGIN</a>
+
+                }
+                ?>
+               <!-- <a href="<?= BASE_URL ?>/user/login">LOGIN</a> -->
+                ?>
             </nav>
         <div id="heroContent">
             <h5> Aquatic Photo Gallery <h5/>
-                <div style='color: #000; font-size: 14pt; font-weight: bold'>Take a look at what we have!</div>
+                <div style='color: #ffffff; font-size: 14pt; font-weight: bold'>Take a look at what we have!</div>
         </div>
         </div>
 

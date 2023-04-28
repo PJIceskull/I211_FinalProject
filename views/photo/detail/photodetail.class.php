@@ -46,6 +46,7 @@ class PhotoDetail extends PhotoIndex {
                     <div id="button-group">
                         <input type="button" id="edit-button" value="   Edit   "
                                onclick="window.location.href = '<?= BASE_URL ?>/photo/edit/<?= $id ?>'">&nbsp;
+
                     </div>
                 </td>
             </tr>

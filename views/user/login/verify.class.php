@@ -13,21 +13,24 @@ class Verify extends PhotoIndex {
 
         <div class="top-row">Verified</div>
         <div class="middle-row">
-            <p><?= $_COOKIE["user"] ?></p>
             <?php
             if ($result === false) {
             echo "Password was incorrect";
+            } else{
+                echo 'Hi! ', $_COOKIE["user"], ', You have successfully logged in.';
+                echo "<br> <a href='". BASE_URL."/welcome/index'>Back to Home Page?</a>";
+
             }
             ?>
         </div>
         <div class="bottom-row">
             <span style="float: left">
                 <?php
-                if (strpos($result, "Successful") == true) { //if the user has logged in, display the logout button
-                    echo "Want to log out? <a href='". BASE_URL."/user/logout'>Logout</a>";
+                if ($result === true) { //if the user has logged in, display the logout button
+                    echo "Already have an account? <a href='". BASE_URL."/user/login'>Login</a>";
                 } else {
                     //if the user has not logged in, display the login button
-                    echo "Already have an account? <a href='". BASE_URL."/user/login''>Login</a>";
+                    echo "Want to log out? <a href='". BASE_URL."/user/logout'>Logout</a>";
                 }
                 ?>
             </span>

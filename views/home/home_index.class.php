@@ -30,19 +30,19 @@ public function display(){
         <div class="boxOne">
             <i class="fa-solid fa-camera-retro"></i>
             <h3>High Quailty Images</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            <p>The images we gather are always the highest quailty for the customers!</p>
         </div>
 
         <div class="boxTwo">
             <i class="fa-solid fa-wrench"></i>
             <h3>Worldwide</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            <p>These images are taken from all around the globe. Providing a variety of aquatic images to please the viewers. </p>
         </div>
 
         <div class="boxThree">
             <i class="fa-solid fa-user-group"></i>
             <h3>Reilable</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+            <p>We are a Trustworthy Reputable Business providing high quality images for the viewers to see.</p>
         </div>
     </div>
 </div>

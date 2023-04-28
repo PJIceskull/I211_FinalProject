@@ -11,8 +11,8 @@ class PhotoView extends PhotoIndex {
     parent::displayHeader("Photogallery");
         ?>
 
-        <h2>Photos Available In Our Gallery: </h2>
         <div id='wrapper'>
+        <h2>Photos Available In Our Gallery: </h2>
         <div id="searchbar">
             <form method="get" action="<?= BASE_URL ?>/photo/search">
                 <input type="text" name="query-terms" id="searchtextbox" placeholder="Search photos by title" autocomplete="off" onkeyup="handleKeyUp(event)">

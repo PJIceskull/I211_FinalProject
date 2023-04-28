@@ -15,7 +15,7 @@ class Reset extends PhotoIndex {
         <div class="top-row">Reset password</div>
         <div class="middle-row">
             <p>Please enter a new password. Username is not changeable.</p>
-            <form method="post" action="<?= BASE_URL ?>/user/reset">
+            <form method="post" action="<?= BASE_URL ?>/user/do_reset">
                 <div><input type="text" name="username" style="width: 99%" value="<?= $user ?>" readonly="readonly"></div>
                 <div><input type="password" name="password" style="width: 99%;" placeholder="Password, 5 characters minimum"></div>
                 <div><input type="submit" class="button" value="Reset Password"></div>

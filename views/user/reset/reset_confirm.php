@@ -14,7 +14,8 @@ class ResetConfirm extends PhotoIndex {
 
         <div class="top-row">Reset password</div>
         <div class="middle-row">
-            <p>Hey, <?= $_COOKIE["user"]?>! Your password has been successfully reset.</p>
+            <p>Hey, <?= $_COOKIE["user"]?>! Your password has been successfully reset.
+                    <a href="<?= BASE_URL ?>/welcome/index">Back to Home Page</a></p>
             <?php
             if ($result === false) {
                 echo "Password length is less than 5 characters";
