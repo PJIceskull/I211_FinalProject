@@ -30,7 +30,7 @@ body{
 
 /*reset padding for p and hx tags*/
 p {
-    padding: 10px;
+    padding: 0 0 1em;
     text-align: center;
 }
 
@@ -73,7 +73,6 @@ hr {
 #wrapper {
     height: auto !important;
     margin: 0 auto;
-    margin-right: 200px;
     text-align:center;
     width:1080px;
     height: 100%;
@@ -86,7 +85,7 @@ hr {
     font-family: 'Times New Roman',Times,serif;
     text-align: center;
     color: #e1d5c2;
-    background-color: #316AC5;
+    background-color: #eeeeee;
 }
 
 #footer, #push{
@@ -161,7 +160,7 @@ nav a{
 #about .flex-container .boxTwo h3,
 #about .flex-container .boxThree h3 {
     text-align: center;
-    color: #316AC5;
+    color: lightblue;
     padding-bottom: 20px;
 }
 
@@ -301,7 +300,7 @@ td p b{
 
 div.top-row {
     margin: auto;
-    width: 1040px;
+    width: 1080px;
     height: 50px;
     line-height: 50px;
     font-size: 18pt;
@@ -340,10 +339,4 @@ input.button {
     color: white;
     background-color: #000;
     text-transform: uppercase;
-}
-
-.loginform{
-    width: 1080px;
-    height: 400px;
-    background-color: green;
 }
