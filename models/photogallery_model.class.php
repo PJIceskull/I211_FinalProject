@@ -99,87 +99,74 @@ class PhotoModel
     }
 
     public function view_photo($id) {
-        //the select sql statement
+        try {
+            //the select sql statement
 
-        $sql = "SELECT * FROM " . $this->tblPhotos . "," . $this->tblCategories .
-            " WHERE " . $this->tblPhotos . ".category_id=" . $this->tblCategories . ".category_id" .
-            " AND " . $this->tblPhotos . ".photo_id='$id'";
+            $sql = "SELECT * FROM " . $this->tblPhotos . "," . $this->tblCategories .
+                " WHERE " . $this->tblPhotos . ".category_id=" . $this->tblCategories . ".category_id" .
+                " AND " . $this->tblPhotos . ".photo_id='$id'";
 
 //        exit($sql);
 
-        $query = $this->dbConnection->query($sql);
+            $query = $this->dbConnection->query($sql);
 
-        if (!$query) {
-            echo "failed";
+            if (!$query) {
+                //echo "failed";
+                throw new DataMissingException("Missing Photo Fields");
         }
 
-        if ($query && $query->num_rows > 0) {
-            $obj = $query->fetch_object();
+            if ($query && $query->num_rows > 0) {
+                $obj = $query->fetch_object();
 
-            //create a photo object
-            $photo = new Photo(null, $obj->Name, $obj->imageURL, $obj->Price, $obj->description);
+                //create a photo object
+                $photo = new Photo(null, $obj->Name, $obj->imageURL, $obj->Price, $obj->description);
 
-            //set the id for the photo
-            $photo->setPhotoId($obj->photo_id);
+                //set the id for the photo
+                $photo->setPhotoId($obj->photo_id);
 
-            //create a photo object
-            //$photo = new Photo(stripslashes($obj->product_name), stripslashes($obj->description), stripslashes($obj->author), stripslashes($obj->price), stripslashes($obj->image) );
+                //create a photo object
+                //$photo = new Photo(stripslashes($obj->product_name), stripslashes($obj->description), stripslashes($obj->author), stripslashes($obj->price), stripslashes($obj->image) );
 
-            return $photo;
+                return $photo;
+            }
+        }catch (DataMissingException $e){
+            $view = new PhotoError();
+            $view->display($e->getMessage());
+            exit();
         }
     }
 
     public function update_photo($id) {
-        //if the script did not receive post data, display an error message and then terminate the script immediately
-        if (!filter_has_var(INPUT_POST, 'name') ||
-            !filter_has_var(INPUT_POST, 'imageURL') ||
-            !filter_has_var(INPUT_POST, 'price') ||
-            !filter_has_var(INPUT_POST, 'description')
-        ) {
-            return false;
-        }
+        try {
+            //if the script did not receive post data, display an error message and then terminate the script immediately
+            if (!filter_has_var(INPUT_POST, 'name') ||
+                !filter_has_var(INPUT_POST, 'imageURL') ||
+                !filter_has_var(INPUT_POST, 'price') ||
+                !filter_has_var(INPUT_POST, 'description')
+            ) {
+                throw new DataMissingException("Missing Value for the input field.");
+            }
 
-        //retrieve data for the new movie; data are sanitized and escaped for security.
-        $name = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'name', FILTER_DEFAULT)));
-        $image = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'imageURL', FILTER_DEFAULT)));
-        $price = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'price', FILTER_DEFAULT)));
-        $description = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'description', FILTER_DEFAULT)));
+            //retrieve data for the new movie; data are sanitized and escaped for security.
+            $name = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'name', FILTER_DEFAULT)));
+            $image = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'imageURL', FILTER_DEFAULT)));
+            $price = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'price', FILTER_DEFAULT)));
+            $description = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'description', FILTER_DEFAULT)));
 //        $image = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'image', FILTER_SANITIZE_STRING)));
 
-        //query string for update
-        $sql = "UPDATE " . $this->tblPhotos .
-            " SET Name='$name', imageURL='$image', Price=$price, "
-            . "description='$description' WHERE photo_id=$id";
+            //query string for update
+            $sql = "UPDATE " . $this->tblPhotos .
+                " SET Name='$name', imageURL='$image', Price=$price, "
+                . "description='$description' WHERE photo_id=$id";
 
-        //execute the query
-        return $this->dbConnection->query($sql);
+            //execute the query
+            return $this->dbConnection->query($sql);
+        }catch (DataMissingException $e){
+            $view = new PhotoError();
+            $view->display($e->getMessage());
+            exit();
+        }
     }
-//    public function update($id) {
-//        //if the script did not receive post data, display an error message and then terminate the script immediately
-//        if (!filter_has_var(INPUT_POST, 'Name') ||
-//            !filter_has_var(INPUT_POST, 'imageURL') ||
-//            !filter_has_var(INPUT_POST, 'Price') ||
-//            !filter_has_var(INPUT_POST, 'description')
-//        ) {
-//            return false;
-//        }
-//
-//        //retrieve data for the new movie; data are sanitized and escaped for security.
-//        $name = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'Name', FILTER_SANITIZE_STRING)));
-//        $image = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'imageURL', FILTER_SANITIZE_STRING)));
-//        $price = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'Price', FILTER_SANITIZE_STRING)));
-//        $description = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING)));
-////        $image = $this->dbConnection->real_escape_string(trim(filter_input(INPUT_POST, 'image', FILTER_SANITIZE_STRING)));
-//
-//        //query string for update
-//        $sql = "UPDATE " . $this->tblPhotos .
-//            " SET Name='$name', imageURL='$image', Price='$price', "
-//            . "image='$image', description='$description' WHERE id='$id'";
-//
-//        //execute the query
-//        return $this->dbConnection->query($sql);
-//    }
-
 
 }
 
